@@ -35,7 +35,6 @@ def app():
                             }
                         </style>
                     """, unsafe_allow_html=True)
-                    with st.beta_container():
                         expander = st.expander(f"{document.metadata['title']} (First 25 words)")
                         expander.write(document.page_content[:25])
                         if len(document.page_content) > 25:
