@@ -27,7 +27,7 @@ def app():
             st.header("Source(s)")
             for document in response:
                 st.markdown(f"""
-                    <div style='border:2px solid black; padding:10px; margin-bottom:10px'>
+                    <div style='border:2px solid black; padding:10px; margin-bottom:10px; word-wrap: break-word;'>
                         <strong>{document.metadata['title']}</strong> (First 25 words)
                         <br>
                         {document.page_content[:25]}
