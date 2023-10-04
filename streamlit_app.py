@@ -28,9 +28,6 @@ def app():
                 col1, col2 = st.columns([4, 1])  # Adjust ratio as needed
                 with col1.expander(f"{document.metadata['title']} (First 25 words)"):
                     col1.write(document.page_content)
-                    st.write(document.page_content[:25])
-                    if len(document.page_content) > 25:
-                        st.write(document.page_content[25:])
                 col2.markdown(f"**Source:** {document.metadata['source']}")
         else:
             st.error("Please enter your question.")
