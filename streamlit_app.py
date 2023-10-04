@@ -38,7 +38,7 @@ def app():
                 if len(document.page_content) > 25:
                     with st.expander("Show more"):
                         st.text(document.page_content[25:])
-                st.text(f"**Source:** {document.metadata['source']}")
+                st.markdown(f"**Source:** {document.metadata['source']}")
                 st.write("---")  # Horizontal line as a separator
 
         else:
