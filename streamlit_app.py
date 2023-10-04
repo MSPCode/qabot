@@ -24,7 +24,7 @@ def app():
         if user_input:
             response = generate_response(user_input)
             st.header("Source(s)")
-           for document in response:
+            for document in response:
                 with st.container():
                     st.markdown("""
                         <style>
