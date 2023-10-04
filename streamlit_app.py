@@ -25,10 +25,11 @@ def app():
             response = generate_response(user_input)
             st.header("Source(s)")
             for document in response:
-                col1, col2 = st.columns([4, 1])  # Adjust ratio as needed
-                with col1.expander(f"{document.metadata['title']} (First 25 words)"):
-                    col1.write(document.page_content)
-                col2.markdown(f"**Source:** {document.metadata['source']}")
+                expander = st.expander(f"{document.metadata['title']} (First 25 words)")
+                expander.write(document.page_content[:25])
+                if len(document.page_content) > 25:
+                    expander.write(document.page_content[25:])
+                st.markdown(f"**Source:** {document.metadata['source']}")
         else:
             st.error("Please enter your question.")
 
