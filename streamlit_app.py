@@ -24,6 +24,15 @@ def app():
     if st.button("Submit"):
         if user_input:
             response = generate_response(user_input)
+            # Adding Response section
+            st.header("Response")
+            for document in response:
+                st.markdown(f"""
+                    <div style='border:2px solid black; padding:10px; margin-bottom:10px; word-wrap: break-word;'>
+                        <strong>{document.metadata['title']}</strong>
+                    </div>
+                """, unsafe_allow_html=True)
+                
             st.header("Source(s)")
             for document in response:
                 st.markdown(f"""
