@@ -25,7 +25,7 @@ def app():
             response = generate_response(user_input)
             st.header("Source(s)")
             for document in response:
-                with st.beta_expander(f"{document.metadata['title']} (First 25 words)"):
+                with st.expander(f"{document.metadata['title']} (First 25 words)"):
                     st.write(document.page_content[:25])
                     if len(document.page_content) > 25:
                         st.write(document.page_content[25:])
