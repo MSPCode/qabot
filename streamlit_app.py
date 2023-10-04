@@ -33,11 +33,9 @@ def app():
             # Source(s) Section
             st.header("Source(s)")
             for document in response:
-                st.text(f"{document.metadata['title']} (First 25 words)")
-                st.text(document.page_content[:25])
-                if len(document.page_content) > 25:
-                    with st.expander("Show more"):
-                        st.text(document.page_content[25:])
+                st.text(f"{document.metadata['title']}")
+                with st.expander("Show more"):
+                    st.text(document.page_content)
                 st.markdown(f"**Source:** {document.metadata['source']}")
                 st.write("---")  # Horizontal line as a separator
 
