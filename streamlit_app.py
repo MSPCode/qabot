@@ -36,11 +36,11 @@ def app():
                             }
                         </style>
                     """, unsafe_allow_html=True)
-                        expander = st.expander(f"{document.metadata['title']} (First 25 words)")
-                        expander.write(document.page_content[:25])
-                        if len(document.page_content) > 25:
-                            expander.write(document.page_content[25:])
-                        st.markdown(f"**Source:** {document.metadata['source']}")
+                    expander = st.expander(f"{document.metadata['title']} (First 25 words)")
+                    expander.write(document.page_content[:25])
+                    if len(document.page_content) > 25:
+                        expander.write(document.page_content[25:])
+                    st.markdown(f"**Source:** {document.metadata['source']}")
                     st.markdown("<div class='bordered'></div>", unsafe_allow_html=True)
         else:
             st.error("Please enter your question.")
