@@ -9,8 +9,8 @@ def generate_response(question):
     # Placeholder for your generate_response function
     # Return a list of Document objects for demonstration
     documents = [
-        Document("This is the first document's content.", {"source": "Source 1", "title": "Title 1"}),
-        Document("This is the second document's content.", {"source": "Source 2", "title": "Title 2"})
+        Document("This is the first document's contentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer.", {"source": "https://google.com", "title": "Title 1"}),
+        Document("This is the second document's content.contentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwercontentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwercontentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwercontentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwercontentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwercontentqrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer", {"source": "google.com", "title": "Title 2"})
     ]
     return documents
 
