@@ -26,22 +26,19 @@ def app():
             response = generate_response(user_input)
             st.header("Source(s)")
             for document in response:
-                with st.container():
-                    st.markdown("""
-                        <style>
-                            .bordered {
-                                border: 2px solid black;
-                                padding: 10px;
-                                margin-bottom: 10px;
-                            }
-                        </style>
-                    """, unsafe_allow_html=True)
-                    expander = st.expander(f"{document.metadata['title']} (First 25 words)")
-                    expander.write(document.page_content[:25])
-                    if len(document.page_content) > 25:
-                        expander.write(document.page_content[25:])
-                    st.markdown(f"**Source:** {document.metadata['source']}")
-                    st.markdown("<div class='bordered'></div>", unsafe_allow_html=True)
+                st.markdown(f"""
+                    <div style='border:2px solid black; padding:10px; margin-bottom:10px'>
+                        <strong>{document.metadata['title']}</strong> (First 25 words)
+                        <br>
+                        {document.page_content[:25]}
+                        <details>
+                            <summary>Show more</summary>
+                            {document.page_content[25:]}
+                        </details>
+                        <br>
+                        <strong>Source:</strong> {document.metadata['source']}
+                    </div>
+                """, unsafe_allow_html=True)
         else:
             st.error("Please enter your question.")
 
